@@ -1,0 +1,9 @@
+---
+image: alpine:edge
+
+build:
+  script:
+    - apk add -q alpine-sdk bsd-compat-headers libdrm-dev xorg-server-dev xproto fontsproto util-macros libtool m4 automake autoconf bison flex
+    - export JOBS=$(nproc)
+    - make
+    - make check
